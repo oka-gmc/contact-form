@@ -62,6 +62,9 @@ function getTodayDate() {
 app.post('/contact', async (req, res) => {
   const { name, email, phone, post_code, Address_1, Address_2, radio_button, drop_down, checkbox } = req.body;// フォーム入力項目のnameを入れる
   
+    // ここでリクエスト内容をログに出す
+    console.log("フォーム送信データ:", req.body);
+
     try {
         const receptionNumber = generateReceptionNumber(); // ここで受付番号を発行
 
