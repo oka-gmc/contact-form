@@ -15,6 +15,7 @@ console.log("GMAIL_FOR_SMTP:", process.env.GMAIL_FOR_SMTP);
 
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // 保存ファイルのパス
 const counterFilePath = path.join(__dirname, 'counter.json');
