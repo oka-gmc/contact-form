@@ -60,7 +60,7 @@ function getTodayDate() {
   }
 
 app.post('/contact', async (req, res) => {
-    const { name, email, message, phone, post_code, address } = req.body;// フォーム入力項目のnameを入れる
+  const { name, email, phone, post_code, Address_1, Address_2, radio_button, drop_down, checkbox } = req.body;// フォーム入力項目のnameを入れる
   
     try {
         const receptionNumber = generateReceptionNumber(); // ここで受付番号を発行
@@ -75,8 +75,10 @@ app.post('/contact', async (req, res) => {
             `メールアドレス：${email}\n` +
             `電話番号　　　：${phone}\n` +
             `郵便番号　　　：${post_code}\n` +
-            `住所　　　　　：${address}\n` +
-            `メッセージ：\n${message}`
+            `住所　　　　　：${Address_1} ${Address_2}\n` +
+            `選択　　　　　：${radio_button}\n` +
+            `ドロップダウン：${drop_down}\n` +
+            `利用規約同意　：${checkbox}\n`
         });
     
         // ユーザーへの自動返信メール
@@ -92,8 +94,10 @@ app.post('/contact', async (req, res) => {
             `メールアドレス：${email}\n` +
             `電話番号　　　：${phone}\n` +
             `郵便番号　　　：${post_code}\n` +
-            `住所　　　　　：${address}\n` +
-            `メッセージ:\n${message}\n` +
+            `住所　　　　　：${Address_1} ${Address_2}\n` +
+            `選択　　　　　：${radio_button}\n` +
+            `ドロップダウン：${drop_down}\n` +
+            `利用規約同意　：${checkbox}\n`
             `---\n\n` +
             `・このメールは自動返信メールです。\n・本メールへの返信によるご質問には対応しておりませんので、ご了承下さい。\n\n株式会社〇〇`
         });
