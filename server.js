@@ -97,7 +97,7 @@ app.post('/contact', async (req, res) => {
             `住所　　　　　：${Address_1} ${Address_2}\n` +
             `選択　　　　　：${radio_button}\n` +
             `ドロップダウン：${drop_down}\n` +
-            `利用規約同意　：${checkbox}\n`
+            `利用規約同意　：${checkbox}\n` +
             `---\n\n` +
             `・このメールは自動返信メールです。\n・本メールへの返信によるご質問には対応しておりませんので、ご了承下さい。\n\n株式会社〇〇`
         });
